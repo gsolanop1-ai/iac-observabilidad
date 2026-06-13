@@ -74,6 +74,7 @@ services:
     command: -config.file=/etc/loki/loki-config.yaml
     volumes:
       - ./loki/loki-config.yaml:/etc/loki/loki-config.yaml:ro
+      - loki-data:/loki
     ports:
       - "3100:3100"
     restart: unless-stopped
@@ -115,3 +116,4 @@ services:
 volumes:
   prometheus-data:
   grafana-data:
+  loki-data:
